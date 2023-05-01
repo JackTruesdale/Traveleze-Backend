@@ -33,6 +33,19 @@ export class TravelController {
         return travels;
     }
 
+    @Get('/standard')
+    async getAllSTANDARDTravels() {
+        const travels = await this.travelsService.getAllStandardTravels();
+        return travels;
+    }
+
+    @Get('/luxury')
+    async getAllLUXURYTravels() {
+        const travels = await this.travelsService.getAllLuxuryTravels();
+        return travels;
+    }
+    
+
     @Get(':id')
     async getTravelById(@Param('id') travelId: string,) {
         const travel  = await this.travelsService.getTravelById(travelId);
